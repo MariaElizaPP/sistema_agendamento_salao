@@ -31,12 +31,12 @@ while($row_scheduling = $result_scheduling->fetch(PDO::FETCH_ASSOC)){
         'title' => $servico, //aparece esse no calendário
         'start' => $start,
         'end' => $end,
-        /*'id' => $id,
+        'id' => $id,
         'cliente' => $cliente,
         'descricao' => $descricao,
         'telefone' => $telefone,
         'valor' => $valor,
-        'flagStatus' => $flagStatus,*/
+        'flagStatus' => $flagStatus,
     ];
 
 }
