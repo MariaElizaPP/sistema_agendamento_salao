@@ -1,11 +1,6 @@
 <?php
 header('Content-Type: application/json');
-
-//incluir arquivo de conn com o bd
-include_once '../../db/conexao.php';
-
-$db = new BancodeDados();
-$db->conecta();
+require_once __DIR__ . '/../../db/conexao.php';
 
 //recuperar dados na query 
 $query_scheduling= "SELECT id, servico, cliente, descricao, telefone, start, end, valor, flagStatus FROM agendamentos";

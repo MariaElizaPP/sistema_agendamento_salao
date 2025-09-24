@@ -1,16 +1,15 @@
 <?php
-    include_once('db/conexao.php');
+    require_once __DIR__ . '/db/conexao.php';
     //criando o objeto mysql e conectando ao banco de dados
-	$mysql = new BancodeDados();
-	$mysql->conecta();
+	//$dados = $mysql->sqlquery($sqlconsulta,'consulta.php');
 
     $codigo = $_POST['codigo'];
-
-	/*// criando a linha do  SELECT
-	$sqlconsulta =  "select * from tabelaimg where codigo = $codigo";
+    $sqlconsulta =  "select * from agendamentos";
 	
-	$dados = $mysql->sqlquery($sqlconsulta,'consulta.php');*/
+
+	
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,6 +23,7 @@
         <nav>
             <a href="index.php?menuop=home">Home</a> |
             <a href="index.php?menuop=agendamento">Agendamento</a> |
+            <a href="index.php?menuop=calendario">Calendário</a> |
             <a href="index.php?menuop=configuracao">Configuração</a> 
         </nav>
     </header>
@@ -37,13 +37,32 @@
                     break;
                     
                 case 'agendamento':
-                    include("paginas/agendamentos/agendamentos.php");
+                    include("paginas/agendamentos/agenda.php");
+                    break;
+
+                case 'cad_agendamento':
+                    include("paginas/agendamentos/cad_agendamento.php");
+                    break;
+                
+                case 'editar_agendamento':
+                    include("paginas/agendamentos/editar_agendamento.php");
+                    break;
+                
+                case 'atualizar_agendamento':
+                    include("paginas/agendamentos/atualizar_agendamento.php");
+                    break;
+
+                case 'calendario':
+                    include("paginas/agendamentoCalendario/agendamentos.php");
                     break;
 
                 case 'configuracao':
                     include("paginas/configuracoes/configuracoes.php");
                     break;
-
+                    
+                case 'inserir_agendamento':
+                    include("paginas/agendamentos/inserir_agendamento.php");
+                    break;
                 default:
                     include("paginas/home/home.php");
                     break;

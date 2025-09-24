@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
       //num maximo de eventos em um determinado dia, se for true o num de eventos sera limitado à altura da celula do dia
       dayMaxEvents: true, // allow "more" link when too many events
 
-      events: '/salao_de_beleza/paginas/agendamentos/listar_agendamentos.php',
+      events: '/salao_de_beleza/paginas/agendamentoCalendario/listar_agendamentos.php',
 
       eventClick: function (info){
         //receber seletor do modal
