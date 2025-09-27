@@ -48,6 +48,10 @@
                     include("paginas/agendamentos/editar_agendamento.php");
                     break;
                 
+                case 'excluir_agendamento':
+                    include("paginas/agendamentos/excluir_agendamento.php");
+                    break;
+                
                 case 'atualizar_agendamento':
                     include("paginas/agendamentos/atualizar_agendamento.php");
                     break;

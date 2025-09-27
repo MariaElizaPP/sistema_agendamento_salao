@@ -21,6 +21,7 @@
             <th>Valor</th>
             <th>Status</th>
             <th>Editar</th>
+            <th>Excluir</th>
         </tr>
     </thead>
     <?php
@@ -42,6 +43,7 @@
             <td><?= $dados["valor"]?></td>
             <td><?= $dados["flagStatus"]?></td>            
             <td><a href="index.php?menuop=editar_agendamento&id=<?=$dados['id']?>">Editar</a></td>
+            <td><a href="index.php?menuop=excluir_agendamento&id=<?=$dados['id']?>">Excluir</a></td>
         </tr>
         <?php
             }
