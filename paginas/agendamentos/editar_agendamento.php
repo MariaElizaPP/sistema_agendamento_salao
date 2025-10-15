@@ -1,4 +1,5 @@
 <?php
+//aqui mostra os dados
     require_once __DIR__ . '/../../db/conexao.php';
     $con = Conexao::getConexao();
     $idServico = $_GET["id"];

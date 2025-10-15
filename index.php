@@ -22,7 +22,8 @@
         <h1>Sistema de Agendamentos dos Serviços</h1>
         <nav>
             <a href="index.php?menuop=home">Home</a> |
-            <a href="index.php?menuop=agendamento">Agendamento</a> |
+            <a href="index.php?menuop=agendamento">Agendamentos</a> |
+            <a href="index.php?menuop=servicos">Serviços</a> |
             <a href="index.php?menuop=calendario">Calendário</a> |
             <a href="index.php?menuop=configuracao">Configuração</a> 
         </nav>
@@ -38,6 +39,18 @@
                     
                 case 'agendamento':
                     include("paginas/agendamentos/agenda.php");
+                    break;
+
+                case 'servicos':
+                    include("paginas/servicos/servico.php");
+                    break;
+
+                case 'cad_servico':
+                    include("paginas/servicos/cad_servico.php");
+                    break;
+
+                case 'inserir_servico':
+                    include("paginas/servicos/inserir_servico.php");
                     break;
 
                 case 'cad_agendamento':
