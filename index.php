@@ -1,12 +1,14 @@
 <?php
+    ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
     require_once __DIR__ . '/db/conexao.php';
-    //criando o objeto mysql e conectando ao banco de dados
-	//$dados = $mysql->sqlquery($sqlconsulta,'consulta.php');
+    require_once __DIR__ . '/controller/agendamentoController.php';
+    require_once __DIR__ . '/controller/servicoController.php';
 
-    $codigo = $_POST['codigo'];
-    $sqlconsulta =  "select * from agendamentos";
-	
 
+    $agendamentoController = new AgendamentoController();
+    $servicoController =  new ServicoController();
 	
 ?>
 
@@ -38,37 +40,37 @@
                     break;
                     
                 case 'agendamento':
-                    include("paginas/agendamentos/agenda.php");
-                    break;
-
-                case 'servicos':
-                    include("paginas/servicos/servico.php");
-                    break;
-
-                case 'cad_servico':
-                    include("paginas/servicos/cad_servico.php");
-                    break;
-
-                case 'inserir_servico':
-                    include("paginas/servicos/inserir_servico.php");
+                    $agendamentoController->listar();
                     break;
 
                 case 'cad_agendamento':
-                    include("paginas/agendamentos/cad_agendamento.php");
+                    $agendamentoController->criar();
                     break;
                 
                 case 'editar_agendamento':
-                    include("paginas/agendamentos/editar_agendamento.php");
+                    $agendamentoController->editar();
                     break;
                 
                 case 'excluir_agendamento':
-                    include("paginas/agendamentos/excluir_agendamento.php");
+                    $agendamentoController->excluir();
                     break;
                 
-                case 'atualizar_agendamento':
-                    include("paginas/agendamentos/atualizar_agendamento.php");
+                case 'servicos':
+                    $servicoController->listar();
                     break;
 
+                case 'cad_servico':
+                    $servicoController->criar();
+                    break;
+
+                case 'editar_servico':
+                    $servicoController->editar();
+                    break;
+
+                case 'excluir_servico':
+                    $servicoController->excluir();
+                    break;
+                
                 case 'calendario':
                     include("paginas/agendamentoCalendario/agendamentos.php");
                     break;
@@ -77,9 +79,7 @@
                     include("paginas/configuracoes/configuracoes.php");
                     break;
                     
-                case 'inserir_agendamento':
-                    include("paginas/agendamentos/inserir_agendamento.php");
-                    break;
+            
                 default:
                     include("paginas/home/home.php");
                     break;

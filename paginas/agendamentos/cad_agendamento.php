@@ -2,34 +2,34 @@
     <h3>Adicionar novo</h3>
 </header>
 <div>
-    <form action="index.php?menuop=inserir_agendamento" method="post">
+    <form action="index.php?menuop=cad_agendamento" method="post">
         <div>
-           <label for="nomeServico">Serviço</label> 
-           <input type="text" name="nomeServico">
+           <label for="servico">Serviço</label> 
+           <input type="text" name="servico">
         </div>
         <div>
-           <label for="nomeCliente">Cliente</label> 
-           <input type="text" name="nomeCliente">
+           <label for="cliente">Cliente</label> 
+           <input type="text" name="cliente">
         </div>
         <div>
-           <label for="descricaoAgendamento">Descrição</label> 
-           <input type="text" name="descricaoAgendamento">
+           <label for="descricao">Descrição</label> 
+           <input type="text" name="descricao">
         </div>
         <div>
-           <label for="telefoneContato">Telefone</label> 
-           <input type="text" name="telefoneContato">
+           <label for="telefone">Telefone</label> 
+           <input type="text" name="telefone">
         </div>
         <div>
-           <label for="horaInicio">Hora marcada</label> 
-           <input type="datetime-local" name="horaInicio">
+           <label for="start">Hora marcada</label> 
+           <input type="datetime-local" name="start">
         </div>
         <div>
-           <label for="horaFim">Hora de término</label> 
-           <input type="datetime-local" name="horaFim">
+           <label for="end">Hora de término</label> 
+           <input type="datetime-local" name="end">
         </div>
         <div>
-           <label for="valorServico">Valor</label> 
-           <input type="number" name="valorServico">
+           <label for="valor">Valor</label> 
+           <input type="number" name="valor">
         </div>
         <div>
            <input type="submit" value="Adicionar" name="btnAdicionar">

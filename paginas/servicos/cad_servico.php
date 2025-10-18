@@ -4,24 +4,24 @@
 <div>
     <form action="index.php?menuop=inserir_servico" method="post">
         <div>
-           <label for="nomeServico">Serviço</label> 
-           <input type="text" name="nomeServico">
+           <label for="servico">Serviço</label> 
+           <input type="text" name="servico">
         </div>
         <div>
-           <label for="valorServico">Valor</label> 
-           <input type="number" name="valorServico">
+           <label for="valor">Valor</label> 
+           <input type="number" name="valor">
         </div>
         <div>
-           <label for="descricaoServico">Descrição</label> 
-           <input type="text" name="descricaoServico">
+           <label for="descricao">Descrição</label> 
+           <input type="text" name="descricao">
         </div>
         <div>
-           <label for="duracaoEstimada">Duração estimada</label> 
-           <input type="time" name="duracaoEstimada">
+           <label for="duracao">Duração estimada</label> 
+           <input type="time" name="duracao">
         </div>
        <div>
-            <label for="statusServico">Defina o status do serviço:</label>
-            <select name="statusServico" id="status">
+            <label for="status">Defina o status do serviço:</label>
+            <select name="status" id="status">
                 <option value="1">Ativo</option>
                 <option value="0">Inativo</option>
             </select>

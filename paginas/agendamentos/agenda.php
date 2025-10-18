@@ -1,52 +1,41 @@
-<?php
-    require_once __DIR__ . '/../../db/conexao.php';
-    $con = Conexao::getConexao();
-?>
-<header>
-    <h3>Agenda</h3>
+    <header>
+    <h3>Agendamento</h3>
 </header>
 <div>
     <a href="index.php?menuop=cad_agendamento">Novo agendamento</a>
 </div>
+<?php if (!empty($_REQUEST['agendamentos'])): ?>
+
 <table border="1">
     <thead>
         <tr>
             <th>ID</th>
-            <th>Servico</th>
+            <th>Serviço</th>
             <th>Cliente</th>
             <th>Descrição</th>
             <th>Telefone</th>
-            <th>Data do serviço</th>
-            <th>Data final</th>
+            <th>Data início</th>
+            <th>Data fim</th>
             <th>Valor</th>
-            <th>Status</th>
             <th>Editar</th>
             <th>Excluir</th>
         </tr>
     </thead>
-    <?php
-        $sql = "SELECT * from agendamentos";
-        $rs = mysqli_query($con, $sql) or die("Erro ao executar a consulta" . mysqli_error($con));
-        while($dados = mysqli_fetch_assoc($rs)){
-
-        
-    ?>
     <tbody>
+        <?php foreach ($_REQUEST['agendamentos'] as $dados): ?>
         <tr>
-            <td><?= $dados["id"]?></td>
-            <td><?= $dados["servico"]?></td>
-            <td><?= $dados["cliente"]?></td>
-            <td><?= $dados["descricao"]?></td>
-            <td><?= $dados["telefone"]?></td>
-            <td><?= $dados["start"]?></td>
-            <td><?= $dados["end"]?></td>
-            <td><?= $dados["valor"]?></td>
-            <td><?= $dados["flagStatus"]?></td>            
-            <td><a href="index.php?menuop=editar_agendamento&id=<?=$dados['id']?>">Editar</a></td>
-            <td><a href="index.php?menuop=excluir_agendamento&id=<?=$dados['id']?>">Excluir</a></td>
+            <td><?= $dados->getId() ?></td>
+            <td><?= $dados->getServico() ?></td>
+            <td><?= $dados->getCliente() ?></td>
+            <td><?= $dados->getDescricao() ?></td>
+            <td><?= $dados->getTelefone() ?></td>
+            <td><?= $dados->getHoraInicio() ?></td>
+            <td><?= $dados->getHoraFim() ?></td>
+            <td><?= $dados->getValor() ?></td>
+            <td><a href="index.php?menuop=editar_agendamento&id=<?= $dados->getId() ?>">Editar</a></td>
+            <td><a href="index.php?menuop=excluir_agendamento&id=<?= $dados->getId() ?>">Excluir</a></td>
         </tr>
-        <?php
-            }
-        ?>
+        <?php endforeach; ?>
     </tbody>
 </table>
+<?php endif; ?>

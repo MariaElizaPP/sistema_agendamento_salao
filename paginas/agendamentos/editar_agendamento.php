@@ -1,50 +1,41 @@
-<?php
-//aqui mostra os dados
-    require_once __DIR__ . '/../../db/conexao.php';
-    $con = Conexao::getConexao();
-    $idServico = $_GET["id"];
-    $sql = "SELECT * FROM agendamentos WHERE id = {$idServico}";
-    $rs = mysqli_query($con, $sql) or die("Erro ao executar a consulta. " . mysqli_error($con));
-    $dados = mysqli_fetch_assoc($rs); 
-?>
 <header>
     <h3>Editar</h3>
 </header>
 <div>
-    <form action="index.php?menuop=atualizar_agendamento" method="post">
+    <form action="index.php?menuop=editar_agendamento" method="post">
         <div>
-           <label for="idServico">ID</label> 
-           <input type="text" name="idServico" value="<?=$dados["id"]?>">
+           <label for="id">ID</label> 
+           <input type="hidden" name="id" value="<?=$agendamento->getId()?>">
         </div>
         <div>
-           <label for="nomeServico">Serviço</label> 
-           <input type="text" name="nomeServico" value="<?=$dados["servico"]?>">
+           <label for="servico">Serviço</label> 
+           <input type="text" name="servico" value="<?=$agendamento->getServico()?>">
         </div>
         <div>
-           <label for="nomeCliente">Cliente</label> 
-           <input type="text" name="nomeCliente" value="<?=$dados["cliente"]?>">
+           <label for="cliente">Cliente</label> 
+           <input type="text" name="cliente" value="<?=$agendamento->getCliente()?>">
         <div>
-           <label for="descricaoAgendamento">Descrição</label> 
-           <input type="text" name="descricaoAgendamento" value="<?=$dados["descricao"]?>">
+           <label for="descricao">Descrição</label> 
+           <input type="text" name="descricao" value="<?=$agendamento->getDescricao()?>">
         </div>
         <div>
-           <label for="telefoneContato">Telefone</label> 
-           <input type="text" name="telefoneContato" value="<?=$dados["telefone"]?>">
+           <label for="telefone">Telefone</label> 
+           <input type="text" name="telefone" value="<?=$agendamento->getTelefone()?>">
         </div>
         <div>
-           <label for="horaInicio">Hora marcada</label> 
-           <input type="datetime-local" name="horaInicio"
-       value="<?= date('Y-m-d\TH:i', strtotime($dados['start'])) ?>">
+           <label for="start">Hora marcada</label> 
+           <input type="datetime-local" name="start"
+       value="<?= date('Y-m-d\TH:i', strtotime($agendamento->getHoraInicio())) ?>">
         
         </div>
         <div>
-           <label for="horaFim">Hora de término</label> 
-           <input type="datetime-local" name="horaFim"
-       value="<?= date('Y-m-d\TH:i', strtotime($dados['end'])) ?>">
+           <label for="end">Hora de término</label> 
+           <input type="datetime-local" name="end"
+       value="<?= date('Y-m-d\TH:i', strtotime($agendamento->getHoraFim())) ?>">
         </div>
         <div>
-           <label for="valorServico">Valor</label> 
-           <input type="number" name="valorServico" value="<?=$dados["valor"]?>">
+           <label for="valor">Valor</label> 
+           <input type="number" name="valor" value="<?=$agendamento->getValor()?>">
         </div>
         <div>
            <input type="submit" value="Salvar" name="btnAdicionar">
