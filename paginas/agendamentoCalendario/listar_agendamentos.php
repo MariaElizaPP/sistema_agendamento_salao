@@ -1,4 +1,9 @@
 <?php
+session_start(); 
+    if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {  
+        header("Location: paginas/login/login.html"); 
+        exit(); 
+    } 
 header('Content-Type: application/json');
 require_once __DIR__ . '/../../db/conexao.php';
 

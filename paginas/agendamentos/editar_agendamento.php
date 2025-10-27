@@ -1,3 +1,11 @@
+<?php
+  session_start(); 
+    if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {  
+        header("Location: paginas/login/login.html"); 
+        exit(); 
+    } 
+
+?>
 <header>
     <h3>Editar</h3>
 </header>
