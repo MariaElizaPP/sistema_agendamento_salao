@@ -1,16 +1,8 @@
-
 <?php
 
     ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-    session_start(); 
-    if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {  
-        header("Location: paginas/login/login.html"); 
-        exit(); 
-    } 
-
     require_once __DIR__ . '/db/conexao.php';
     require_once __DIR__ . '/controller/agendamentoController.php';
     require_once __DIR__ . '/controller/servicoController.php';
@@ -27,18 +19,35 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Agendamentos</title>
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
-    <header>
-        <h1>Sistema de Agendamentos dos Serviços</h1>
-        <nav>
-            <a href="index.php?menuop=home">Home</a> |
-            <a href="index.php?menuop=agendamento">Agendamentos</a> |
-            <a href="index.php?menuop=servicos">Serviços</a> |
-            <a href="index.php?menuop=calendario">Calendário</a> |
-            <a href="index.php?menuop=configuracao">Configuração</a> 
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul class="nav-list primary-nav">
+                <a href="index.php"> <img src="Logo_Salao.svg" alt="CodingNepal" class="logo"></a>
+                
+                <span><li> <a href="index.php?menuop=calendario"> <img src="icone_imagens/Calendar Icon.svg" class="icon">
+                    Calendário</a> </li></span>
+                
+                <span> <li><a href="index.php?menuop=agendamento"> <img src="icone_imagens/Agendamentos.svg" class="icon">
+                    Agendamentos</a> </li></span>
+                
+                <span> <li><a href="index.php?menuop=servicos"><img src="icone_imagens/Serviços.svg" class="icon">
+                    Serviços</a> </li></span>
+                
+                <span> <li><a href="index.php?menuop=configuracao"> <img src="icone_imagens/configurações.svg" class="icon">
+                    Configurações</a></li></span>
+               
+            </ul>
+
+
+            
         </nav>
-    </header>
+  
+
+    </aside>
+    
     <main>
         <?php
             $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"home";
