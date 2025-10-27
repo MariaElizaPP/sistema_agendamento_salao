@@ -1,4 +1,6 @@
+
 <?php
+
     ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -25,28 +27,18 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Agendamentos</title>
-    <link rel="stylesheet" href="custom.css">
 </head>
 <body>
-    <aside class="sidebar">
-        <header class="sidebar-header">
-            <h1>Sistema de Agendamentos dos Serviços</h1>
-        <nav class="sidebar-nav">
-            <ul class="nav-list primary-nav">
-                <a href="index.php"> <img src="Logo_Salao.svg" alt="CodingNepal"></a>
-                <a href="index.php?menuop=home">Home</a> |
-                <a href="index.php?menuop=agendamento">Agendamentos</a> |
-                <a href="index.php?menuop=servicos">Serviços</a> |
-                <a href="index.php?menuop=calendario">Calendário</a> |
-                <a href="index.php?menuop=configuracao">Configuração</a> | 
-                <a href="paginas/logout/logout.php">Sair</a>  
-            </ul>
-            
+    <header>
+        <h1>Sistema de Agendamentos dos Serviços</h1>
+        <nav>
+            <a href="index.php?menuop=home">Home</a> |
+            <a href="index.php?menuop=agendamento">Agendamentos</a> |
+            <a href="index.php?menuop=servicos">Serviços</a> |
+            <a href="index.php?menuop=calendario">Calendário</a> |
+            <a href="index.php?menuop=configuracao">Configuração</a> 
         </nav>
     </header>
-
-    </aside>
-    
     <main>
         <?php
             $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"home";
