@@ -37,6 +37,7 @@ require_once '../db/conexao.php';
             } else {
                     $_SESSION['error_message'] = "Usuário ou senha inválidos!";
                     require '../paginas/login/login.html';
+                    header("Location: ../paginas/login/login.html");
                     exit();
             }
         } else {

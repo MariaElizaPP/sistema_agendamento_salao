@@ -7,3 +7,7 @@
 
 ?>
 <h3>Configuração</h3>
+
+<form action="paginas/logout/logout.php" method="post">
+  <button type="submit">Sair</button>
+</form>
