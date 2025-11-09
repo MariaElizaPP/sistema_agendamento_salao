@@ -12,7 +12,7 @@ class UsuarioDAO {
     }
 
     public function buscarUsuario($usuario, $senha) {
-        $stmt = $this->con->prepare("SELECT * FROM user WHERE login = ? AND password = ?");
+        $stmt = $this->con->prepare("SELECT * FROM usuario WHERE login = ? AND password = ?");
         $stmt->bind_param("ss", $usuario, $senha);
         $stmt->execute();
         $result = $stmt->get_result();

@@ -1,52 +1,46 @@
 <?php
+session_start();
+require_once '../db/conexao.php'; 
 
-require_once '../models/loginModel.php';
-require_once '../db/conexao.php';
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $controller = new LoginController();
+    $controller->login();
+} else {
+    require '../paginas/login/login.php'; 
+}
 
- session_start();
+class LoginController {
 
- if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+    public function login() {
+        $usuario = $_POST['usuario'] ?? '';
+        $senha = $_POST['senha'] ?? '';
+
         $con = new Conexao();
-        $controller = new LoginController($con->getConexao());
-        $controller->login();
-    
+        $mysqli = $con->getConexao();
 
- } else {
-    require '../paginas/login.php';
+        // Primeiro pega o usuário pelo login
+        $stmt = $mysqli->prepare("SELECT * FROM usuario WHERE login = ?");
+        $stmt->bind_param("s", $usuario);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
 
- }
-
- class LoginController{
-    private $usuarioModel;
-
-    public function __construct($con){
-        $this->usuarioModel = new UsuarioModel($con);
-
-    }
-
-    public function login(){
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $usuario = $_POST['usuario'];
-            $senha = $_POST['senha'];
-
-            if ($this->usuarioModel->autenticar($usuario, $senha)) {
-                    $_SESSION['usuario'] = $usuario;
-                    $_SESSION['autenticado'] = true;
-                    header("Location: ../index.php");
-                    exit();
+        if ($row = $resultado->fetch_assoc()) {
+            // Compara a senha (texto simples)
+            if ($senha === $row['password']) {
+                $_SESSION['usuario'] = $usuario;
+                $_SESSION['autenticado'] = true;
+                header('Location: ../index.php');
+                exit();
             } else {
-                    $_SESSION['error_message'] = "Usuário ou senha inválidos!";
-                    require '../paginas/login/login.html';
-                    header("Location: ../paginas/login/login.html");
-                    exit();
+                $_SESSION['error_message'] = 'Usuário ou senha inválidos!';
+                require '../paginas/login/login.php';
+                exit();
             }
         } else {
-            require '../paginas/login/login.html';
+            $_SESSION['error_message'] = 'Usuário ou senha inválidos!';
+            require '../paginas/login/login.php';
+            exit();
         }
-
     }
-
- }
-
-
+}
 ?>

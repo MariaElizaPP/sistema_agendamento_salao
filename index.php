@@ -1,8 +1,4 @@
 <?php
-
-    ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
     require_once __DIR__ . '/db/conexao.php';
     require_once __DIR__ . '/controller/agendamentoController.php';
     require_once __DIR__ . '/controller/servicoController.php';
@@ -19,7 +15,7 @@ error_reporting(E_ALL);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Agendamentos</title>
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="/sistema_agendamento/css/index.css">
 </head>
 <body>
     <aside class="sidebar">
