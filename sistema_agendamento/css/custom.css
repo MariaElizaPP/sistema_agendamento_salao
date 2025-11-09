@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Raleway", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 246px;
+    height: 768px; 
+    background-color: #FFFFFF;
+    border-right: 1px solid #EDEDED;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+    z-index: 10;
+
+   
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
+}
+
+
+.logo {
+    display: block;
+    width: 206px;
+    height: 96px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 8px;
+}
+
+
+.sidebar-nav .nav-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.sidebar-nav .nav-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 0 8px 20px;
+    border-radius: 6px;
+    width: 206px;
+    height: 35px;
+    color: #333; 
+    text-decoration: none;
+    transition: all 0.4s ease;
+}
+
+
+
+
+
+.sidebar-nav .nav-link:hover {
+    background-color: #F2ECE1;
+    color: #000; 
+}
+
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: brightness(0) saturate(100%) invert(25%) sepia(7%) saturate(421%) hue-rotate(17deg) brightness(94%) contrast(87%);
+   
+}
+
+a{
+    text-decoration: none;
+    color: #5D574F;
+    transition: 0.4s ease;
+}
+
+li:hover{
+    background-color: #F2ECE1;
+    display: block;
+    width: 206px;
+    height: 36px;
+    border-radius: 6px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 12px;
+}
