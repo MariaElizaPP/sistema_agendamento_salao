@@ -4,12 +4,16 @@
 <div>
     <form action="index.php?menuop=editar_pacote" method="post">
         <div>
+            <label for="id">ID</label> 
+            <input type="hidden" name="id" value="<?=$pacote->getId()?>">
+        </div>
+        <div>
            <label for="nome">Nome</label> 
            <input type="text" name="nome" value="<?=$pacote->getNome()?>">
         </div>
         <div>
            <label for="valor">Valor total</label> 
-           <input type="number" name="valor"  value="<?=$pacote->getValorTotal()?>">
+           <input type="number" name="valor_total"  value="<?=$pacote->getValorTotal()?>">
         </div>
         <div>
            <label for="descricao">Descrição</label> 
