@@ -2,11 +2,16 @@
     require_once __DIR__ . '/db/conexao.php';
     require_once __DIR__ . '/controller/agendamentoController.php';
     require_once __DIR__ . '/controller/servicoController.php';
+    require_once __DIR__ . '/controller/pacoteController.php';
+    ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
     $agendamentoController = new AgendamentoController();
     $servicoController =  new ServicoController();
-	
+    $pacoteController = new PacoteController();
+    
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +20,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Agendamentos</title>
-    <link rel="stylesheet" href="/sistema_agendamento/css/index.css">
+    <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
     <aside class="sidebar">
@@ -31,6 +37,9 @@
                 
                 <span> <li><a href="index.php?menuop=servicos"><img src="icone_imagens/Serviços.svg" class="icon">
                     Serviços</a> </li></span>
+
+                <span> <li><a href="index.php?menuop=pacotes"><img src="icone_imagens/Serviços.svg" class="icon">
+                    Pacotes</a> </li></span>
                 
                 <span> <li><a href="index.php?menuop=configuracao"> <img src="icone_imagens/configurações.svg" class="icon">
                     Configurações</a></li></span>
@@ -83,6 +92,22 @@
 
                 case 'excluir_servico':
                     $servicoController->excluir();
+                    break;
+
+                case 'pacotes':
+                    $pacoteController->listar();
+                    break;
+
+                case 'cad_pacote':
+                    $pacoteController->criar();
+                    break;
+
+                case 'editar_pacote':
+                    $pacoteController->editar();
+                    break;
+
+                case 'excluir_pacote':
+                    $pacoteController->excluir();
                     break;
                 
                 case 'calendario':

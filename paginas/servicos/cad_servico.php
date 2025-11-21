@@ -2,7 +2,7 @@
     <h3>Adicionar novo serviço</h3>
 </header>
 <div>
-    <form action="index.php?menuop=inserir_servico" method="post">
+    <form action="index.php?menuop=cad_servico" method="post">
         <div>
            <label for="servico">Serviço</label> 
            <input type="text" name="servico">

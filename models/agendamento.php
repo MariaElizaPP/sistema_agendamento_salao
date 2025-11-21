@@ -7,10 +7,9 @@ class Agendamento{
     public $cliente;
     public $descricao;
     public $telefone;
-    public $horaInicio;
-    public $horaFim;
-    public $valor;
-
+    public $statusServico;
+    public $statusPagamento;
+   
     public function setId($id)
     {
         $this->id = $id;
@@ -55,31 +54,22 @@ class Agendamento{
         return $this->telefone;
     }
 
-    public function setHoraInicio($horaInicio)
+    public function setStatusServico($statusServico)
     {
-        $this->horaInicio = $horaInicio;
+        $this->statusServico = $statusServico;
     }
 
-    public function getHoraInicio(){
-        return $this->horaInicio;
+    public function getStatusServico(){
+        return $this->statusServico;
     }
 
-    public function setHoraFim($horaFim)
+    public function setStatusPagamento($statusPagamento)
     {
-        $this->horaFim = $horaFim;
+        $this->statusPagamento = $statusPagamento;
     }
 
-    public function getHoraFim(){
-        return $this->horaFim;
-    }
-
-    public function setValor($valor)
-    {
-        $this->valor = $valor;
-    }
-
-    public function getValor(){
-        return $this->valor;
+    public function getStatusPagamento(){
+        return $this->statusPagamento;
     }
 
 

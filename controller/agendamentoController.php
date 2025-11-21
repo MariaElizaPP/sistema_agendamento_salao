@@ -1,7 +1,11 @@
 <?php
 require_once __DIR__ . '/../models/agendamento.php';
 require_once __DIR__ . '/../dao/agendamentoDAO.php';
-
+require_once __DIR__ . '/../strategy/AgendamentoServicoSimples.php';
+require_once __DIR__ . '/../strategy/AgendamentoPacoteRecorrente.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 class AgendamentoController{
     public function listar()
     {
@@ -10,24 +14,30 @@ class AgendamentoController{
         $_REQUEST['agendamentos'] = $agendamento;
         require_once __DIR__ . '/../paginas/agendamentos/agenda.php';
     }
-    public function criar()
-    {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $agendamento = new Agendamento();
-            $agendamentodao = new AgendamentoDAO();
-            $agendamento->setServico($_POST['servico']);
-            $agendamento->setCliente($_POST['cliente']);
-            $agendamento->setDescricao($_POST['descricao']);
-            $agendamento->setTelefone($_POST['telefone']);
-            $agendamento->setHoraInicio($_POST['start']);
-            $agendamento->setHoraFim($_POST['end']);
-            $agendamento->setValor($_POST['valor']);
-            $agendamentodao->salvar($agendamento);
-            header('Location: index.php?menuop=agendamento');
-            exit();
+    public function criar() {
+    $servicoDAO = new ServicoDAO();
+    $pacoteDAO = new PacoteDAO();
+    $_REQUEST['servicos'] = $servicoDAO->listar();
+    $_REQUEST['pacotes'] = $pacoteDAO->listar();
+    
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $dados = $_POST;
+        $agendamentoDAO = new AgendamentoDAO();
+
+        if ($dados['tipo'] == 'servico') {
+            $strategy = new AgendamentoServicoSimples();
+        } else {
+            $strategy = new AgendamentoPacoteRecorrente();
         }
-        require_once __DIR__ . '/../paginas/agendamentos/cad_agendamento.php';
+
+        $strategy->gerarAgendamentos($agendamentoDAO, $dados);
+
+        header('Location: index.php?menuop=agendamento');
+        exit();
     }
+
+    require_once __DIR__ . '/../paginas/agendamentos/cad_agendamento.php';
+}
 
     public function editar()
     {
@@ -39,9 +49,7 @@ class AgendamentoController{
             $agendamento->setCliente($_POST['cliente']);
             $agendamento->setDescricao($_POST['descricao']);
             $agendamento->setTelefone($_POST['telefone']);
-            $agendamento->setHoraInicio($_POST['start']);
-            $agendamento->setHoraFim($_POST['end']);
-            $agendamento->setValor($_POST['valor']);
+            //$agendamento->setValor($_POST['valor']);
             $agendamentodao->atualizar($agendamento);
             header('Location: index.php?menuop=agendamento');
             exit();

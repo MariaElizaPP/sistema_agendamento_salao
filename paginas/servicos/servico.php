@@ -1,15 +1,22 @@
+<link rel="stylesheet" href="css/servico.css">
+
 
 <header>
-    <h3>Serviços</h3>
+  <div class="titulos">
+    <h3>Listagem de Serviços</h3>
+    <h4>Veja todos os seus serviços</h4>
+  </div>
+
+  <div class="botao">
+    <a href="index.php?menuop=cad_servico">Novo Serviço</a>
+  </div>
 </header>
-<div>
-    <a href="index.php?menuop=cad_servico">Cadastrar novo serviço</a>
-</div>
+
+
 <?php if (!empty($_REQUEST['servicos'])): ?>
 <table border="1">
     <thead>
-        <tr>
-            <th>ID</th>
+        <tr class=titulo-tabela>
             <th>Servico</th>
             <th>Valor</th>
             <th>Descrição</th>
@@ -19,18 +26,19 @@
             <th>Excluir</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="corpo-tabela">
     <?php foreach ($_REQUEST['servicos'] as $dados): ?>
     
         <tr>
-            <td><?= $dados->getId()?></td>
             <td><?= $dados->getServico()?></td>
             <td><?= $dados->getValor()?></td>
             <td><?= $dados->getDescricao()?></td>
-            <td><?= $dados->getDuracao()?></td>
-            <td><?= $dados->getStatus()?></td>            
-            <td><a href="index.php?menuop=editar_servico&id=<?=$dados->getId()?>">Editar</a></td>
-            <td><a href="index.php?menuop=excluir_servico&id=<?=$dados->getId()?>">Excluir</a></td>
+            <td><?= date('H:i', strtotime($dados->getDuracao())) ?></td>
+           <td class="<?= $dados->getStatus() == 1 ? 'ativo' : 'inativo' ?>">
+            <?= $dados->getStatus() == 1 ? 'Ativo' : 'Inativo' ?>
+            </td>
+            <td><a href="index.php?menuop=editar_servico&id=<?=$dados->getId()?>"><img src="icone_imagens/editar.svg" alt="editar"></a></td>
+            <td><a href="index.php?menuop=excluir_servico&id=<?=$dados->getId()?>"><img src="icone_imagens/excluir.svg" alt="excluir"></a></td>
         </tr>
         <?php
             endforeach; 
