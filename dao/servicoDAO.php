@@ -69,6 +69,35 @@ class ServicoDAO{
         return $servicos;
     }
 
+    public function buscarPorId(int $id)
+    {
+        $con = Conexao::getConexao();
+        $stmt = $con->prepare("SELECT id, servico, valor, descricao, duracao, status FROM servicos WHERE id = ?");
+        if (!$stmt) {
+            throw new Exception("Prepare failed: " . $con->error);
+        }
+        $stmt->bind_param("i", $id);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $row = $res->fetch_assoc();
+        $stmt->close();
+        $con->close();
+
+        if (!$row){
+            return null;
+        } 
+
+        $servico = new Servico();
+        $servico->setId($row['id']);
+        $servico->setServico($row['servico']);
+        $servico->setValor($row['valor']);
+        $servico->setDescricao($row['descricao']);
+        $servico->setDuracao($row['duracao']);
+        $servico->setStatus($row['status']);
+        
+        return $servico;
+    }
+
 
 }
 

@@ -4,7 +4,7 @@
         private $servico;
         private $valor;
         private $descricao;
-        private $duracao;
+        private $duracao; //obs a duração vai ser em minutos
         private $status;
 
         public function getId() {

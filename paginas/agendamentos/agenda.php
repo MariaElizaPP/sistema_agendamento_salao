@@ -31,6 +31,8 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
                 <th>Serviço</th>
                 <th>Descrição</th>
                 <th>Valor</th>
+                <th>Status do pagamento</th>
+                <th>Data marcada</th>
                 <th>Editar</th>
                 <th>Excluir</th>
             </tr>
@@ -42,7 +44,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
                     <td><?= $dados->getTelefone() ?></td>
                     <td><?= $dados->getServico() ?></td>
                     <td><?= $dados->getDescricao() ?></td>
-                    
+                    <td><?= $dados->getValor() ?></td>
+                    <td><?= $dados->getStatusPagamento() ?></td>
+                    <td><?= $dados->getStart()?></td>
                     <td><a href="index.php?menuop=editar_agendamento&id=<?= $dados->getId() ?>">
                         <img src="icone_imagens/editar.svg" alt="Editar" class="icone-botao">
                     </a>

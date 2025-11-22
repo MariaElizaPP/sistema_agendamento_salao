@@ -33,18 +33,26 @@
         <div>
            <label for="start">Hora marcada</label> 
            <input type="datetime-local" name="start"
-       value="<?= date('Y-m-d\TH:i', strtotime($agendamento->getHoraInicio())) ?>">
-        
+       value="<?= date('Y-m-d\TH:i', strtotime($agendamento->getStart())) ?>">
         </div>
-        <div>
-           <label for="end">Hora de término</label> 
-           <input type="datetime-local" name="end"
-       value="<?= date('Y-m-d\TH:i', strtotime($agendamento->getHoraFim())) ?>">
-        </div>
+   
         <div>
            <label for="valor">Valor</label> 
-           <input type="number" name="valor" value="<?=$agendamento->getValor()?>">
+           <input type="number" name="valor" value="<?=($agendamento->getValor())?>">
         </div>
+
+        <label>Status do agendamento</label>
+        <select name="flagStatus">
+                <option value="0">Em andamento</option>
+                <option value="1">Concluído</option>
+        </select>
+
+        <label>Status do pagamento</label>
+        <select name="statusPagamento">
+                <option value="0">Pendente</option>
+                <option value="1">Pago</option>
+        </select>
+
         <div>
            <input type="submit" value="Salvar" name="btnAdicionar">
         </div>

@@ -32,7 +32,7 @@ error_reporting(E_ALL);
                 <span><li> <a href="index.php?menuop=calendario"> <img src="icone_imagens/Calendar Icon.svg" class="icon">
                     Calendário</a> </li></span>
                 
-                <span> <li><a href="index.php?menuop=agendamento"> <img src="icone_imagens/Agendamentos.svg" class="icon">
+                <span> <li><a href="index.php?menuop=agendamentos"> <img src="icone_imagens/Agendamentos.svg" class="icon">
                     Agendamentos</a> </li></span>
                 
                 <span> <li><a href="index.php?menuop=servicos"><img src="icone_imagens/Serviços.svg" class="icon">
@@ -62,7 +62,7 @@ error_reporting(E_ALL);
                     include("paginas/home/home.php");
                     break;
                     
-                case 'agendamento':
+                case 'agendamentos':
                     $agendamentoController->listar();
                     break;
 

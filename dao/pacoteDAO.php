@@ -77,11 +77,6 @@ class PacoteDAO {
     {
         $con = Conexao::getConexao();
         $stmt = $con->prepare("INSERT INTO pacotes (nome, descricao, quantidade_sessoes, valor_total) VALUES (?, ?, ?, ?)");
-        if (!$stmt) {
-            throw new Exception("Prepare failed: " . $con->error);
-        }
-
-        // nome (s), descricao (s), quantidade_sessoes (i), valor_total (d)
         $stmt->bind_param("ssid",
             $pacote->getNome(),
             $pacote->getDescricao(),
@@ -90,14 +85,13 @@ class PacoteDAO {
         );
 
         if (!$stmt->execute()) {
-            $err = $stmt->error;
-            $stmt->close();
-            $con->close();
-            throw new Exception("Execute failed (salvar): " . $err);
+            throw new Exception("Execute failed ( pacote): " . $stmt->error);
         }
 
+        $id = $con->insert_id;
         $stmt->close();
         $con->close();
+        return $id;
     }
 
     public function atualizar(Pacote $pacote){
@@ -181,6 +175,8 @@ class PacoteDAO {
         $pacote->setValorTotal($row['valor_total']);
         return $pacote;
     }
+
+   
 }
 
 
