@@ -4,14 +4,12 @@
     require_once __DIR__ . '/controller/servicoController.php';
     require_once __DIR__ . '/controller/pacoteController.php';
     ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 
     $agendamentoController = new AgendamentoController();
     $servicoController =  new ServicoController();
     $pacoteController = new PacoteController();
-    
 ?>
 
 <!DOCTYPE html>
@@ -27,41 +25,23 @@ error_reporting(E_ALL);
     <aside class="sidebar">
         <nav class="sidebar-nav">
             <ul class="nav-list primary-nav">
-                <a href="index.php"> <img src="Logo_Salao.svg" alt="CodingNepal" class="logo"></a>
-                
-                <span><li> <a href="index.php?menuop=calendario"> <img src="icone_imagens/Calendar Icon.svg" class="icon">
-                    Calendário</a> </li></span>
-                
-                <span> <li><a href="index.php?menuop=agendamentos"> <img src="icone_imagens/Agendamentos.svg" class="icon">
-                    Agendamentos</a> </li></span>
-                
-                <span> <li><a href="index.php?menuop=servicos"><img src="icone_imagens/Serviços.svg" class="icon">
-                    Serviços</a> </li></span>
-
-                <span> <li><a href="index.php?menuop=pacotes"><img src="icone_imagens/Serviços.svg" class="icon">
-                    Pacotes</a> </li></span>
-                
-                <span> <li><a href="index.php?menuop=configuracao"> <img src="icone_imagens/configurações.svg" class="icon">
-                    Configurações</a></li></span>
-               
-            </ul>
-
-
-            
+                <a href="index.php">
+                    <img src="/sistema_agendamento/icone_imagens/logo.svg" alt="CodingNepal" class="logo">
+                </a>
+                <li><a href="index.php?menuop=calendario"><img src="icone_imagens/Sidebar/Calendario.svg" class="icon"> Calendário</a></li>
+                <li><a href="index.php?menuop=agendamentos"><img src="icone_imagens/Sidebar/Agendamentos.svg" class="icon"> Agendamentos</a></li>
+                <li><a href="index.php?menuop=servicos"><img src="icone_imagens/Sidebar/Servicos.svg" class="icon"> Serviços</a></li>
+                <li><a href="index.php?menuop=pacotes"><img src="icone_imagens/Sidebar/Pacotes.svg" class="icon"> Pacotes</a></li>
+                <li><a href="index.php?menuop=configuracao"><img src="icone_imagens/Sidebar/Configuracoes.svg" class="icon"> Configurações</a></li>
+            </ul> 
         </nav>
-  
-
     </aside>
     
     <main>
         <?php
-            $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"home";
+            $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"calendario";
             //se existe menuop redireciona senão vai automaticante para a home
             switch ($menuop) {
-                case 'home':
-                    include("paginas/home/home.php");
-                    break;
-                    
                 case 'agendamentos':
                     $agendamentoController->listar();
                     break;
@@ -120,8 +100,8 @@ error_reporting(E_ALL);
                     
             
                 default:
-                    include("paginas/home/home.php");
-                    break;
+                include("paginas/agendamentoCalendario/agendamentos.php");
+                break;
             }
         ?>
     </main>

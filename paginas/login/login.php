@@ -3,6 +3,7 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <!-- Lado direito: formulário -->
         <div class="right-side">
             <div class="tela-login">
-                <img src="/sistema_agendamento/icone_imagens/Login/logo.svg" 
+                <img src="/sistema_agendamento/icone_imagens/logo.svg" 
                      alt="Logo Rúbia Hair" class="logo">
                 <p class="descricao">Insira seus dados para continuar</p>
 
@@ -55,5 +56,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
     <!-- JS -->
     <script src="/sistema_agendamento/js/login.js"></script>
+
 </body>
 </html>
