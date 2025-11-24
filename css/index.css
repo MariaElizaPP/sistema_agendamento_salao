@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+.main-content {
+    margin-left: 246px; 
+    padding: 20px; 
+}
+
 body {
     font-family: "Raleway", Arial, Helvetica, sans-serif;
     font-size: 14px;

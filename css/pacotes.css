@@ -13,24 +13,26 @@ header {
 }
 
 /* Bloco dos textos (títulos) */
-
-
 .titulos h3 {
   font-size: 20px;
-  color: #342D23;
+  color:#342D23;
   font-weight: 600;
   line-height: 100%;
   margin: 0;
+  width: 268px;
+  height: 23px;
+
 }
 
 .titulos h4 {
+  margin: 8px 0 0; 
   font-size: 16px;
   font-weight: 500;
   color: #5D574F;
-  margin: 4px 0 0;
   line-height: 100%;
+  margin: 4px 0 0;
+  
 }
-
 
 /* Botão */
 .botao a {
@@ -51,6 +53,8 @@ header {
 
 .botao a:hover {
   background-color: #c7918a;
+  
+
 }
 
 
@@ -123,5 +127,8 @@ tr,td{
 }
 
 
-
+/*table{
+  margin-left: 246px; 
+  padding: 20px;
+}*/
 
