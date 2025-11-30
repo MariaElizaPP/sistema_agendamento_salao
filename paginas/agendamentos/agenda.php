@@ -32,6 +32,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
                     <th>Descrição</th>
                     <th>Valor</th>
                     <th>Status do pagamento</th>
+                    <th>Status do agendamento</th>
                     <th>Data marcada</th>
                     <th>Editar</th>
                     <th>Excluir</th>
@@ -45,8 +46,18 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
                         <td><?= $dados->getServico() ?></td>
                         <td><?= $dados->getDescricao() ?></td>
                         <td><?= $dados->getValor() ?></td>
-                        <td><?= $dados->getStatusPagamento() ?></td>
+                        
+                        <td class="<?= $dados->getStatusPagamento() == 1 ? 'Pago' : 'Pendente' ?>">
+                            <?= $dados->getStatusPagamento() == 1 ? 'Pago' : 'Pendente' ?>
+                        </td>
+                        
+                        <td class="<?= $dados->getStatusServico() == 1 ? 'Concluído' : 'Em andamento' ?>">
+                            <?= $dados->getStatusServico() == 1 ? 'Concluído' : 'Em andamento' ?>
+                        </td>
+
+
                         <td><?= $dados->getStart()?></td>
+                       
                         <td><a href="index.php?menuop=editar_agendamento&id=<?= $dados->getId() ?>">
                             <img src="icone_imagens/editar.svg" alt="Editar" class="icone-botao">
                         </a></td>
@@ -56,6 +67,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
                                 class="icone-botao excluir-btn"
                                 data-id="<?= $dados->getId() ?>">
                         </td>
+
+                        
+
                     </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -23,12 +23,15 @@
 </head>
 <body>
     <aside class="sidebar">
+
+        <a href="index.php">
+        <img src="/sistema_agendamento/icone_imagens/logo.svg" alt="Logo" class="logo">
+        </a>
+
         <nav class="sidebar-nav">
             <ul class="nav-list primary-nav">
-                <a href="index.php">
-                    <img src="/sistema_agendamento/icone_imagens/logo.svg" alt="CodingNepal" class="logo">
-                </a>
-                <li><a href="index.php?menuop=calendario"><img src="icone_imagens/Sidebar/Calendario.svg" class="icon"> Calendário</a></li>
+               
+                <li><a href="#"><img src="icone_imagens/Sidebar/Calendario.svg" class="icon"> Calendário</a></li>
                 <li><a href="index.php?menuop=agendamentos"><img src="icone_imagens/Sidebar/Agendamentos.svg" class="icon"> Agendamentos</a></li>
                 <li><a href="index.php?menuop=servicos"><img src="icone_imagens/Sidebar/Servicos.svg" class="icon"> Serviços</a></li>
                 <li><a href="index.php?menuop=pacotes"><img src="icone_imagens/Sidebar/Pacotes.svg" class="icon"> Pacotes</a></li>
@@ -39,7 +42,7 @@
     
     <main>
         <?php
-            $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"calendario";
+            $menuop = (isset($_GET["menuop"]))?$_GET["menuop"]:"agendamentos";
             //se existe menuop redireciona senão vai automaticante para a home
             switch ($menuop) {
                 case 'agendamentos':
@@ -91,7 +94,7 @@
                     break;
                 
                 case 'calendario':
-                    include("paginas/agendamentoCalendario/agendamentos.php");
+                    //include("paginas/agendamentoCalendario/agendamentos.php");
                     break;
 
                 case 'configuracao':
@@ -100,7 +103,7 @@
                     
             
                 default:
-                include("paginas/agendamentoCalendario/agendamentos.php");
+                include("paginas/agendamentos/agenda.php");
                 break;
             }
         ?>

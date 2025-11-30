@@ -23,8 +23,8 @@
 <div>
     <form action="index.php?menuop=editar_agendamento" method="post">
         <div>
-           <!--<label for="id">ID</label> 
-           <input type="hidden" name="id" value="<?=$agendamento->getId()?>">-->
+           <!--<label for="id">ID</label> >-->
+           <input type="hidden" name="id" value="<?=$agendamento->getId()?>">
         </div>
         <div>
            <label for="servico">Serviço</label> 

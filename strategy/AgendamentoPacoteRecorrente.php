@@ -21,7 +21,6 @@ class AgendamentoPacoteRecorrente implements AgendamentoStrategy {
 
             $dao->salvar($dados);
 
-            // próximo agendamento (ex: semanal) ???
             $start->modify("+1 week");
         }
     }

@@ -17,8 +17,9 @@
         
          <div>
             <label for="pacotes">Nome</label> 
-            <input type="text" name="pacotes" placeholder="Insira o nome do serviço">
+            <input type="text" name="pacotes" placeholder="Insira o nome do pacote">
          </div>
+   
          <div>
             <label for="valor">Valor total</label> 
             <input type="number" name="valor" placeholder="R$">

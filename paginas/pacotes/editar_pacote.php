@@ -14,7 +14,7 @@
 
 
       <form action="index.php?menuop=editar_pacote" method="post">
-          <div>
+         <div>
             <input type="hidden" name="id" value="<?=$pacote->getId()?>">
          </div>
          <div>

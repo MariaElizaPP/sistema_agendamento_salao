@@ -22,6 +22,7 @@ class AgendamentoController {
             $dados['valor'] = $_POST['valor'];
             $dados['flagStatus'] = $_POST['flagStatus'];
             $dados['statusPagamento'] = $_POST['statusPagamento'];
+            $dados['statusServico'] = $_POST['statusServico'];
 
             if ($dados['tipo'] === "servico") {
                 $dados['id_referencia'] = $_POST['idServico'];
@@ -111,7 +112,6 @@ class AgendamentoController {
             exit();
         }
 
-        // GET (carregar dados)
         $id = $_GET['id'];
         $lista = $dao->listar();
 
