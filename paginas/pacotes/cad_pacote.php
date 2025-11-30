@@ -19,6 +19,12 @@
             <label for="pacotes">Nome</label> 
             <input type="text" name="pacotes" placeholder="Insira o nome do pacote">
          </div>
+         <?php foreach ($_REQUEST['servicos'] as $s) { ?>
+            <div>
+               <input type="checkbox" name="servicos[]" value="<?= $s->getId(); ?>">
+               <?= $s->getServico(); ?> 
+            </div>
+         <?php } ?>
    
          <div>
             <label for="valor">Valor total</label> 
@@ -35,6 +41,8 @@
           <div class="cadastrar">
             <input type="submit" value="Cadastrar" name="btnAdicionar">
          </div>
+
+         
       </form>
    </div>
 </div>

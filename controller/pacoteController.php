@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../models/pacoteModel.php';
 require_once __DIR__ . '/../dao/pacoteDAO.php';
+require_once __DIR__ . '/../dao/pacoteServicoDAO.php';
+require_once __DIR__ . '/../dao/servicoDAO.php';
 
 class PacoteController{
     public function listar()
@@ -26,11 +28,22 @@ class PacoteController{
             $pacote->setNome($_POST['pacotes']);
             $pacote->setDescricao($_POST['descricao']);
             $pacote->setQtdSessoes($_POST['sessoes']);
-            $pacotedao->salvar($pacote);
+            
 
+            $idPacote = $pacotedao->salvar($pacote);
+
+            $pacoteServicoDAO = new PacoteServicoDAO();
+            if (!empty($_POST['servicos'])){
+                $pacoteServicoDAO->adicionarServicos($idPacote, $_POST['servicos']);
+
+            }
+             
             header('Location: index.php?menuop=pacotes');
             exit();
         }
+        $servicoDAO = new ServicoDAO();
+        $_REQUEST['servicos'] = $servicoDAO->listar();
+
         require_once __DIR__ . '/../paginas/pacotes/cad_pacote.php';
     }
 
