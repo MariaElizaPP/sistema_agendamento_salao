@@ -45,3 +45,23 @@
   </table>
   <?php endif; ?>
 </div>
+
+<!-- Modal fora da tabela -->
+<div id="modalExcluir" class="modal" style="display: none;">
+  <div class="modal-content">
+    <div class="modal-titulo">
+      <img src="/sistema_agendamento/icone_imagens/atencao.svg" class="modal-imagem">
+      <h3>Atenção!</h3>
+    </div>
+
+    <p>Tem certeza que deseja excluir este pacote?</p>
+
+    <div class="modal-botoes">
+      <a id="btnConfirmar" href="#" class="btn-confirmar">Sim</a>
+      <button id="btnCancelar" class="btn-cancelar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/Pacotes/excluir_pac.js"></script>
+

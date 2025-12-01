@@ -9,7 +9,6 @@ class AgendamentoServicoSimples implements AgendamentoStrategy {
         $start = new DateTime($dados['start']);
         $end = clone $start;
 
-        // duração em minutos
         $end->modify("+{$dados['duracao']} minutes");
 
         $dados['end'] = $end->format("Y-m-d H:i:s");
