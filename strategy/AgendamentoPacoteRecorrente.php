@@ -1,6 +1,6 @@
 <?php
 require_once 'AgendamentoStrategy.php';
-
+//teste
 class AgendamentoPacoteRecorrente implements AgendamentoStrategy {
 
     public function gerarAgendamentos($dao, $dados) {
