@@ -12,7 +12,6 @@ header {
   padding: 20px;
 }
 
-/* Bloco dos textos (títulos) */
 .titulos h3 {
   font-size: 20px;
   color:#342D23;
@@ -27,7 +26,6 @@ header {
   color: #5D574F;
 }
 
-/* Botão */
 .botao a {
   position: absolute;
   top: 20px;
@@ -137,9 +135,6 @@ tr,td{
     line-height: 100%;
 }
 
-
-/*modal para voltar*/
-/* Fundo escuro */
 .modal {
     display: none; 
     position: fixed;
@@ -153,7 +148,6 @@ tr,td{
     z-index: 999;
 }
 
-/* Caixa do modal */
 .modal-content {
     background: #fff;
     padding: 20px;
@@ -162,7 +156,6 @@ tr,td{
     text-align: center;
 }
 
-/* Botões */
 .modal-buttons {
     margin-top: 18px;
     display: flex;
@@ -187,7 +180,6 @@ tr,td{
 }
 
 
-/*modal */
 
 .modal {
   display: none; 
@@ -201,8 +193,6 @@ tr,td{
   align-items:center;    
   z-index:1000;
 }
-
-/* Caixa branca do modal */
 .modal-content {
     width: 410px;
     height: 321px;
@@ -215,8 +205,6 @@ tr,td{
     gap: 40px;
 }
 
-
-/*titulos */
 .modal-titulo {
    display: flex;
    align-items: center; 
@@ -236,7 +224,6 @@ tr,td{
    margin: 0;        
 }
 
-/* Texto */
 .modal p{
    font-weight: 500;
    font-size: 16px;
@@ -244,7 +231,6 @@ tr,td{
    text-align: left;
 }
 
-/* Botões */
 .modal-botoes {
     display: flex;
     flex-direction: column; 
@@ -256,7 +242,6 @@ tr,td{
     width: 100%;
 }
 
-/* Confirmar */
 .btn-confirmar {
   width: 330px;
   height: 40px;
@@ -269,7 +254,6 @@ tr,td{
   backdrop-filter: blur(5.625px);
 }
 
-/* Cancelar */
 .btn-cancelar {
   width: 330px;
   height: 40px;

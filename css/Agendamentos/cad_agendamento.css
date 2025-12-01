@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap');
 
-/* titulos*/
 header {
   width: 100%;
   display: flex;
@@ -42,7 +41,6 @@ header {
     margin-right: 28px;
 }
 
-/* formulário */
 
 form input[type="text"],
 form input[type="number"],
@@ -116,7 +114,6 @@ form label {
     color: #5D574F;
 }
 
-/* Placeholder */
 form input::placeholder {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
@@ -160,7 +157,6 @@ input[type="datetime-local"]:not(:focus):invalid {
     font-size: 14px !important;
 }
 
-/* MODAL ABAIXO */
 
 .modal {
   display: none; 

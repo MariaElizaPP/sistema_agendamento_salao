@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap');
 
-/* titulos*/
 header {
   width: 100%;
   display: flex;
@@ -9,7 +8,6 @@ header {
   margin-bottom: 16px;
 }
 
-/* Bloco dos textos (títulos) */
 .titulos h3 {
   font-size: 20px;
   color:#342D23;
@@ -29,7 +27,6 @@ header {
   margin: 4px 0 0;
 }
 
-/* Botão */
 .botao a {
   background-color: #D9ACA6;
   color: #fff;
@@ -46,10 +43,9 @@ header {
 }
 
 
-/*tabela título*/
 
 .titulo-tabela {
-    width: 100%;            /* Também ocupa toda a largura */
+    width: 100%;            
     padding: 14px 12px;
     background-color: #F4ECDE; 
     color: #5D574F;
@@ -58,7 +54,7 @@ header {
 
 .tabela {
     width: 100%; 
-    margin-top: 32px; /* Espaço entre o h4 e a tabela */
+    margin-top: 32px;
     border-collapse: separate; 
     border-spacing: 0 8px;
     font-weight: 500;
@@ -90,10 +86,9 @@ th, td {
   text-align: left;
 }
 
-/*campos da tabela*/
 
 .corpo-tabela {
-    width: 100%;            /* Para o tbody também ocupar a tela inteira */
+    width: 100%;           
     background-color: #F8F8F8;
 }
 
@@ -105,12 +100,11 @@ tr,td{
     line-height: 100%;
 }
 
-/* Container principal afastado da sidebar à direita e da borda esquerda da tela */
 .main-content {     
-    margin-right: 28px;    /* 246px da sidebar + 20px de espaçamento */
+    margin-right: 28px;    
 }
 
-/* MODAL ABAIXO */
+
 
 .modal {
   display: none; 

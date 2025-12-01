@@ -20,7 +20,6 @@ class LoginController {
     $con = new Conexao();
     $mysqli = $con->getConexao();
 
-    // Pega o usuário pelo login correto
     $stmt = $mysqli->prepare("SELECT * FROM usuario WHERE login = ?");
     if (!$stmt) {
         die("Erro no prepare: " . $mysqli->error);

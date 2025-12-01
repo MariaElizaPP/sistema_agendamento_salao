@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,500;1,500&display=swap');
 
-/*Titulos*/
-
 header {
   width: 100%;
   display: flex;
@@ -32,7 +30,6 @@ header {
     margin-top: 5px;
 }
 
-/*Botão Voltar*/
 .voltar{
     display: flex;
     align-items: center;
@@ -51,7 +48,6 @@ header {
 }
 
 
-/*Campos para editar*/
 label {
   font-size: 12px;
   font-weight: 500;
@@ -82,7 +78,6 @@ form input[type="number"],form input[type='time'],form select {
     
 }
 
-/*campo de descrição (deixar maior/texto mais em cima)*/
 #descricao {
     height: 60px;
     padding: 14px;
@@ -93,8 +88,6 @@ form input[type="number"],form input[type='time'],form select {
     padding-top: 4px;
 }
 
-
-/*seta do status*/
 #status {
     appearance: none;
     -webkit-appearance: none;
@@ -105,9 +98,6 @@ form input[type="number"],form input[type='time'],form select {
     background-position: right 14px center;
     padding-right: 40px;
 }
-
-
-/*placeholder*/
 
 .placeholder{
     width: 137px;
@@ -138,7 +128,6 @@ form input[type="number"],form input[type='time'],form select {
     padding: 0 14px;
 }
 
-/*Botão Salvar */
 .salvar input {
     width: 536px;
     height: 40px;
@@ -159,8 +148,6 @@ form input[type="number"],form input[type='time'],form select {
     border-radius: 5px;
 }
 
-/*modal para voltar*/
-/* Fundo escuro */
 .modal {
     display: none; 
     position: fixed;
@@ -174,7 +161,6 @@ form input[type="number"],form input[type='time'],form select {
     z-index: 999;
 }
 
-/* Caixa do modal */
 .modal-content {
     background: #fff;
     padding: 20px;
@@ -183,7 +169,6 @@ form input[type="number"],form input[type='time'],form select {
     text-align: center;
 }
 
-/* Botões */
 .modal-buttons {
     margin-top: 18px;
     display: flex;
@@ -208,8 +193,6 @@ form input[type="number"],form input[type='time'],form select {
 }
 
 
-/*modal */
-
 .modal {
   display: none; 
   position: fixed;
@@ -223,7 +206,6 @@ form input[type="number"],form input[type='time'],form select {
   z-index:1000;
 }
 
-/* Caixa branca do modal */
 .modal-content {
     width: 410px;
     height: 321px;
@@ -236,8 +218,6 @@ form input[type="number"],form input[type='time'],form select {
     gap: 40px;
 }
 
-
-/*titulos */
 .modal-titulo {
    display: flex;
    align-items: center; 
@@ -257,7 +237,6 @@ form input[type="number"],form input[type='time'],form select {
    margin: 0;        
 }
 
-/* Texto */
 .modal p{
    font-weight: 500;
    font-size: 16px;
@@ -265,7 +244,6 @@ form input[type="number"],form input[type='time'],form select {
    text-align: left;
 }
 
-/* Botões */
 .modal-botoes {
     display: flex;
     flex-direction: column; 
@@ -277,7 +255,6 @@ form input[type="number"],form input[type='time'],form select {
     width: 100%;
 }
 
-/* Confirmar */
 .btn-confirmar {
   width: 330px;
   height: 40px;
@@ -290,7 +267,6 @@ form input[type="number"],form input[type='time'],form select {
   backdrop-filter: blur(5.625px);
 }
 
-/* Cancelar */
 .btn-cancelar {
   width: 330px;
   height: 40px;

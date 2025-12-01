@@ -105,7 +105,6 @@ header {
   justify-content:space-between;
 }
 
-/* Cabeçalho com ícone e título */
 .modal-header {
   display:flex;
   align-items:center;
@@ -134,7 +133,6 @@ header {
   margin-top: 40px;       
 }
 
-/* Cancelar */
 #cancel-btn {
   width: 157.5px;
   height: 40px;
@@ -147,7 +145,6 @@ header {
   font-size: 16px;
 }
 
-/* Sair */
 #confirm-btn {
   width: 157.5px;
   height: 40px;
@@ -160,7 +157,6 @@ header {
   font-size: 16px;
 }
 
-/* Hover */
 #cancel-btn:hover {
   background: #f5f0f0;
 }

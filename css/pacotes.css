@@ -144,8 +144,6 @@ tr,td{
     line-height: 100%;
 }
 
-/*modal */
-
 .modal {
   display: none; 
   position: fixed;
@@ -159,7 +157,6 @@ tr,td{
   z-index:1000;
 }
 
-/* Caixa branca do modal */
 .modal-content {
     width: 410px;
     height: 321px;
@@ -173,8 +170,6 @@ tr,td{
 }
 
 
-
-/*titulos */
 .modal-titulo {
    display: flex;
    align-items: center; 
@@ -194,7 +189,6 @@ tr,td{
    margin: 0;        
 }
 
-/* Texto */
 .modal p{
    font-weight: 500;
    font-size: 16px;
@@ -202,7 +196,6 @@ tr,td{
    text-align: left;
 }
 
-/* Botões */
 .modal-botoes {
     display: flex;
     flex-direction: column; 
@@ -214,7 +207,6 @@ tr,td{
     width: 100%;
 }
 
-/* Confirmar */
 .btn-confirmar {
   width: 330px;
   height: 40px;
@@ -227,17 +219,14 @@ tr,td{
   backdrop-filter: blur(5.625px);
   text-align: center;
 
-  /* CORREÇÃO */
   display: flex;
   justify-content: center;
   align-items: center;
 
-  line-height: normal; /* ou pode remover */
+  line-height: normal; 
 }
 
 
-
-/* Cancelar */
 .btn-cancelar {
   width: 330px;
   height: 40px;

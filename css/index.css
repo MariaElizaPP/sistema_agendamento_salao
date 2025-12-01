@@ -30,7 +30,6 @@ body {
     z-index: 2;
 }
 
-/* logo */
 .logo {
     width: 200px;
     height: auto;
@@ -40,27 +39,24 @@ body {
     border-bottom: 1px solid #ccc;
 }
 
-/* remove margin do UL */
 .sidebar-nav .nav-list {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* <<<<<<<<<<<<<< ESPAÇAMENTO ENTRE ITENS */
+    gap: 16px; 
 }
 
-/* cada item da lista tem um bloco */
 .sidebar-nav li {
     width: 100%;
 }
 
-/* LINK padronizado */
 .sidebar-nav a {
     display: flex;
     align-items: center;
     height: 35px;
     width: 100%;
     border-radius: 6px;
-    padding-left: 20px;  /* <<<<<<<<<<<<<<<<< 20PX antes do texto */
+    padding-left: 20px; 
     text-decoration: none;
     color: #5D574F;
     background-color: transparent;
@@ -68,13 +64,12 @@ body {
 }
 
 
-/* HOVER */
 .sidebar-nav a:hover {
     background-color: #F2ECE1;
     color: #000;
 }
 
-/* ícones */
+
 .icon {
     width: 20px;
     height: 20px;
